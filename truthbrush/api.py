@@ -467,7 +467,6 @@ class Api:
                     "Connection": "keep-alive",
                 },
                 timeout=(30, 60),
-                verify=False,
             )
             sess_req.raise_for_status()
         except requests.RequestsError as e:
