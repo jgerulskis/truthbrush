@@ -30,7 +30,7 @@ USER_AGENT = (
 CLIENT_ID = "9X1Fdd-pxNsAgEDNi_SfhJWi8T-vLuV2WVzKIbkTCw4"
 CLIENT_SECRET = "ozF8jzI4968oTKFkEnsBC-UbLPCdrSv0MkXGQu2o_-M"
 
-proxies = {"http": os.getenv("http_proxy"), "https": os.getenv("https_proxy")}
+proxies = {"http": os.getenv("truthbrush_http_proxy"), "https": os.getenv("truthbrush_https_proxy")}
 
 TRUTHSOCIAL_USERNAME = os.getenv("TRUTHSOCIAL_USERNAME")
 TRUTHSOCIAL_PASSWORD = os.getenv("TRUTHSOCIAL_PASSWORD")
@@ -453,6 +453,9 @@ class Api:
                 "scope": "read",
             }
 
+            logger.info(f"Logging in to {url} as {username}")
+            logger.info(f"Proxies: {proxies}")
+            logger.info(f"Password: {password}")
             sess_req = requests.request(
                 "POST",
                 url,
