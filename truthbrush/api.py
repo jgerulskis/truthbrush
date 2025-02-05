@@ -33,13 +33,11 @@ CLIENT_SECRET = "ozF8jzI4968oTKFkEnsBC-UbLPCdrSv0MkXGQu2o_-M"
 OXYLABS_USERNAME = os.getenv("OXYLABS_USERNAME")
 OXYLABS_PASSWORD = os.getenv("OXYLABS_PASSWORD")
 OXYLABS_PROXY= os.getenv("OXYLABS_PROXY")
-USE_OXY = os.getenv("USE_OXY").lower() == "true"
 
-proxies = {"http": os.getenv("truthbrush_http_proxy"), "https": os.getenv("truthbrush_https_proxy")}
-if USE_OXY:
-    proxies = {
-        "https":('https://user-%s:%s@%s'%(OXYLABS_USERNAME,OXYLABS_PASSWORD,OXYLABS_PROXY))
-    }
+# proxies = {"http": os.getenv("truthbrush_http_proxy"), "https": os.getenv("truthbrush_https_proxy")}
+proxies = {
+    "https":('https://user-%s:%s@%s'%(OXYLABS_USERNAME,OXYLABS_PASSWORD,OXYLABS_PROXY))
+}
 
 
 TRUTHSOCIAL_USERNAME = os.getenv("TRUTHSOCIAL_USERNAME")
