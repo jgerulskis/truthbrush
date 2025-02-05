@@ -464,8 +464,10 @@ class Api:
                 impersonate="chrome123",
                 headers={
                     "User-Agent": USER_AGENT,
+                    "Connection": "keep-alive",
                 },
-                timeout=(15, 45)
+                timeout=(30, 60),
+                verify=False,
             )
             sess_req.raise_for_status()
         except requests.RequestsError as e:
