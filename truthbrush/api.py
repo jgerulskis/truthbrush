@@ -465,6 +465,7 @@ class Api:
                 headers={
                     "User-Agent": USER_AGENT,
                 },
+                timeout=(15, 45)
             )
             sess_req.raise_for_status()
         except requests.RequestsError as e:
